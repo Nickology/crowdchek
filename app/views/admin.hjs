@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<style>
+		 .col {font-family: sans-serif;}
+		 #content {max-width: 700px;}
+		 .row {width: 600px;}
+		 .col {float:left;margin-right: 25px;width:15%;margin-bottom: 10px;}
+		 .head .col {font-weight: bold; font-size: 16px;border-bottom: 2px solid red;}
+		</style>
+	</head>
+
+	<body>
+	
+		<div id="content">
+			<img src="images/logo.jpg"> 
+			<h1>ADMIN</h1>
+			<div class="row head">
+				<div class="col">user</div>
+				<div class="col">content</div>
+				<div class="col">source</div>
+				<div class="col">feedback</div>
+				<div class="col">action</div>
+			</div>
+			<div class="row">
+				<div class="col">User1</div>
+				<div class="col">Colour</div>
+				<div class="col">CNN</div>
+				<div class="col">Typo</div>
+				<div class="col">Fixed</div>
+			</div>
+			<div class="row">
+				<div class="col">User2</div>
+				<div class="col">The cat sat on the mat</div>
+				<div class="col">Telegraph</div>
+				<div class="col">Fake News</div>
+				<div class="col">Unverified</div>
+			</div>
+		</div>
+	</body>
+</html>
