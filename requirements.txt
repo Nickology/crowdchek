@@ -1,0 +1,61 @@
+Facebook Hackathon - CrowdChek
+
+Requirements
+
+Client
+* selection by
+    * page
+    * text selection
+    * video timecode
+    * picture
+    * social embeds
+    * area of page?
+* options
+    * typo
+    * factual error
+        * eye witness
+        * reference (url)
+    * language suggestion
+        * offensive 
+        * non-inclusive
+    * I want to know more about this
+        * give suggested related stories
+        * user suggestions to questions?
+* show highlighted feedback
+    * toggle on/off
+* User authentication login
+    * Facebook
+    * Other social networks
+
+
+
+
+Admin
+* “blue tick” verified users rank higher in queue
+* queue of feedback
+    * moderation/resolution 
+    * shown by set threshold
+    * filter options, i.e. only feedback on Travel articles
+    * 
+
+Backend
+* database 
+    * data
+        * user
+        * content
+        * source
+        * feedback
+        * action
+            * resolution 
+* rank articles
+    * source
+* rank users
+* cfg settings
+    * thresholds
+* channel notification
+    * FB Messenger
+    * Email
+    * SMS
+    * Slack
+
+
