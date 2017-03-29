@@ -1,0 +1,17 @@
+.cck_context {
+	position: absolute;
+	z-index: 100;
+	border: 1px solid black;
+	display: none;
+	background-color: white;
+}
+
+.cck_context_option {
+	background-color: white;
+	width: 100%;
+}
+.cck_context_option:hover {
+	background-color: #7474cf;
+	cursor: pointer;
+	cursor: hand;
+}
