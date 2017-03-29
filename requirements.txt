@@ -5,16 +5,16 @@ Requirements
 Client
 * selection by
     * page
-    * text selection
+    * text selection #
     * video timecode
     * picture
     * social embeds
     * area of page?
 * options
-    * typo
-    * factual error
-        * eye witness
-        * reference (url)
+    * typo #
+    * factual error #
+        * eye witness #
+        * reference (url) #
     * language suggestion
         * offensive 
         * non-inclusive
@@ -32,9 +32,9 @@ Client
 
 Admin
 * “blue tick” verified users rank higher in queue
-* queue of feedback
+* queue of feedback #
     * moderation/resolution 
-    * shown by set threshold
+    * shown by set threshold #
     * filter options, i.e. only feedback on Travel articles
     * 
 
@@ -52,9 +52,9 @@ Backend
 * rank users
 * cfg settings
     * thresholds
-* channel notification
+* channel notification #
     * FB Messenger
-    * Email
+    * Email #
     * SMS
     * Slack
 
