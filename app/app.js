@@ -5,8 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// setup firebase
+var config = require("./firebase-config.json");
+var _firebase = require('firebase');
+var firebase = _firebase.initializeApp(config);
+
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var chek = require('./routes/chek');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -23,7 +29,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/chek', chek);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

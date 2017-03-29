@@ -2,41 +2,80 @@
 <!DOCTYPE html>
 <html class="no-js">
 	<head>
-		<style>
-		 .col {font-family: sans-serif;}
-		 #content {max-width: 700px;}
-		 .row {width: 600px;}
-		 .col {float:left;margin-right: 25px;width:15%;margin-bottom: 10px;}
-		 .head .col {font-weight: bold; font-size: 16px;border-bottom: 2px solid red;}
-		</style>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyB3SgTmiFa1x0M7biWAh0OGUgqPAt56uYg",
+		    authDomain: "crowd-check.firebaseapp.com",
+		    databaseURL: "https://crowd-check.firebaseio.com",
+		    storageBucket: "crowd-check.appspot.com",
+		    messagingSenderId: "546931723916"
+		  };
+		  firebase.initializeApp(config);
+		</script>
 	</head>
-
 	<body>
-	
 		<div id="content">
-			<img src="images/logo.jpg"> 
+			<img src="images/logo.jpg">
 			<h1>ADMIN</h1>
-			<div class="row head">
-				<div class="col">user</div>
-				<div class="col">content</div>
-				<div class="col">source</div>
-				<div class="col">feedback</div>
-				<div class="col">action</div>
-			</div>
-			<div class="row">
-				<div class="col">User1</div>
-				<div class="col">Colour</div>
-				<div class="col">CNN</div>
-				<div class="col">Typo</div>
-				<div class="col">Fixed</div>
-			</div>
-			<div class="row">
-				<div class="col">User2</div>
-				<div class="col">The cat sat on the mat</div>
-				<div class="col">Telegraph</div>
-				<div class="col">Fake News</div>
-				<div class="col">Unverified</div>
-			</div>
+			<table id="table">
+					<thead><tr><tr/></thead>
+					<tbody></tbody>
+			</table>
+			<div id="table_body"></div>
 		</div>
+		<script>
+			var fields = ['user', 'content', 'source', 'feedback', 'parent_source']
+			var ref = firebase.database().ref('cheks').limitToLast(50);
+			var table = document.getElementById('table');
+
+			createTableHead();
+
+			ref.on('child_added', function(data) {
+				var chek = data.val();
+				var tbody = table.getElementsByTagName('tbody')[0];
+
+				var row = createTR(chek);
+				tbody.append(row);
+	    });
+
+			function createTableHead() {
+				var head = table.getElementsByTagName('tr')[0];
+				for (var i = 0; i < fields.length; i++) {
+					var th = document.createElement("th");
+					th.innerHTML = '<th>' + makeSentence(fields[i]) + '</th>';
+					head.appendChild(th);
+				}
+				var th = document.createElement("th");
+				th.innerHTML = '<th>Actions</th>';
+				head.appendChild(th);
+			}
+
+			function createTR(object) {
+				var tr = document.createElement("tr");
+				for (var i = 0; i < fields.length; i++) {
+					var td = createTD(object[fields[i]]);
+    			tr.appendChild(td);
+				}
+				tr.appendChild(createTD('<a href="#">Will Fixed</a><a href="#">Won\'t Fixed</a>'));
+				return tr;
+			}
+
+			function createTD(text) {
+				var td = document.createElement("td");
+				td.innerHTML = '<td>' + text + '</td>';
+				return td;
+			}
+
+			function makeSentence(string) {
+				var parts = string.split('_');
+				for(var i = 0; i < parts.length; i++) {
+					parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1);
+				}
+				return parts.join(' ');
+			}
+		</script>
 	</body>
 </html>

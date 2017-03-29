@@ -1,0 +1,11 @@
+{
+    "apiKey": "AIzaSyB3SgTmiFa1x0M7biWAh0OGUgqPAt56uYg",
+    "authDomain": "crowd-check.firebaseapp.com",
+    "databaseURL": "https://crowd-check.firebaseio.com",
+    "storageBucket": "crowd-check.appspot.com",
+    "messagingSenderId": "546931723916",
+    "databaseAuthVariableOverride": {
+      "provider": "anonymous",
+      "uid": "chek-server"
+    }
+}
