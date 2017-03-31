@@ -1,30 +1,63 @@
-
 <!DOCTYPE html>
 <html class="no-js">
 	<head>
 		<style>
-		 h1, p {font-family: sans-serif;}
-		 #content {max-width: 700px;}
+		 h1, p {font-family: sans-serif;};
 		</style>
+		<link rel="stylesheet" href="stylesheets/crowdcheck.css">
+		<script type="text/javascript" src="javascripts/crowdchek.js" defer></script>
+        <script type="text/javascript" src="javascripts/animation.js" defer></script>
+		<meta property="og:url" content="http://www.example.com" />
 	</head>
 
 	<body>
 	
-		<div id="content">
-			<img src="images/navigation.png" height="100" >
+	<img src="images/navigation.png" width="90%">
 
-			<h1>Brexit begins: UK triggers Article 50 to begin EU divorce</h1>
+	<h1>Brexit begins: UK triggers Article 50 to begin EU divorce</h1>
 
-			<p>London (CNN)The UK government has formally served divorce papers on the European Union, signaling the beginning of the end of a relationship that has endured for 44 years.</p>
+	<p>London (CNN)The UK government has formally served divorce papers on the European Union, signaling the beginning of the end of a relationship that has endured for 44 years.</p>
 
-			<p>Theresa May, the British Prime Minister, confirmed that the UK had triggered Article 50 of the Lisbon Treaty, beginning a legal process that must end in two years' time with Britain leaving the EU.</p>
+	<p>Theresa May, the British Prime Minister, confirmed that the UK had triggered Article 50 of the Lisbon Treaty, beginning a legal process that must end in two years' time with Britain leaving the EU.</p>
 
-			<p>"This is an historic moment for which there can be no turning back. Britain is leaving the European Union," May told the House of Commons in London.</p>
+	<p>"This is an historic moment for which there can be no turning back. Britain is leaving the European Union," May told the House of Commons in London.</p>
 
-			<p>A few minutes earlier in Brussels, the British Permanent Representative to the EU, Sir Tim Barrow, delivered a six-page formal letter of notification to Donald Tusk, the President of the European Council, in Brussels.</p>
+	<p>A few minutes earlier in Brussels, the British Permanent Representative to the EU, Sir Tim Barrow, delivered a six-page formal letter of notification to Donald Tusk, the President of the European Council, in Brussels.</p>
 
-			<p>"The Article 50 process is now under way, and in accordance with the British people, the United Kingdom is leaving the European Union," May said.</p>
+	<p>"The Article 50 process is now under way, and in accordance with the British people, the United Kingdom is leaving the European Union," May said.</p>
 
-		</div>
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content" id="overlay-divs">
+      <div id="login">
+          <a href="#" onClick="nextScreen()">Login.</a>
+      </div>
+      <div id="moreinfo">
+          <img src="images/logo.jpg">
+          <div id="overlay-instructions">
+              <p>Can you tell us more about the issue?</p>
+              <p><textarea id="textinput" rows="5" cols="50" placeholder="Please include a URL reference if possible."></textarea></p>
+          </div>
+          <!-- Rounded switch -->
+              <label class="switch">
+                <input type="checkbox" checked>
+                <div class="slider round"></div>
+              </label>
+          <div id="sliderlabel">It's ok to contact me</div>
+          <button onClick="nextScreen()">Submit</button>
+      </div>
+      <div id="thanksmessage">
+          <img src="images/logo.jpg">
+          <p>Report submitted. Thanks!</p>
+      </div>
+  </div>
+
+</div>
+
 	</body>
 </html>
