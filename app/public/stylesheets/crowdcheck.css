@@ -32,13 +32,17 @@
     background-color: #f60000;
     color: white;
     cursor: default;
+    border: 1px;
+    border-color: black;
 }
 
-/* Overlay pop-up styles */
+/* Login functionality goes here; hidden for now */
+#login {
+    display: none;
+}
 
 /* The Overlay (background) */
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
     height: 100%;
     width: 0;
     position: fixed; /* Stay in place */
@@ -54,7 +58,7 @@
 /* Position the content inside the overlay */
 .overlay-content {
     position: relative;
-    top: 25%; /* 25% from the top */
+    top: 10%; /* 25% from the top */
     width: 100%; /* 100% width */
     text-align: center; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
@@ -68,6 +72,17 @@
     color: #818181;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+#textinput {
+    font-size: 36px;
+    font-family: sans-serif;
+}
+
+#overlay-instructions * {
+    font-size: 0.7em;
+    margin: auto;
+    max-width: 500px;
 }
 
 .overlay p {
@@ -96,6 +111,28 @@
     font-size: 36px;
     color: #818181;
     display: block; /* Display block instead of inline */
+    margin: auto;
+    max-width: 500px;
+}
+
+.overlay-content button {
+    border: 1px;
+    border-color: #818181;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: transparent;
+    color: #818181;
+    font-size: 30px;
+    padding: 2px 10px 2px 10px;
+    cursor: pointer;
+    cursor: hand;
+    text-align: center;
+}
+
+.overlay-content button:hover {
+    border-color: white;
+    background-color: white;
+    color: #818181;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -119,4 +156,74 @@
         top: 15px;
         right: 35px;
     }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  top: 2px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#sliderlabel {
+    display: inline-block;
+    position: relative;
+    font-size: 0.7em;
+    width: auto;
+    clear: right;
+    vertical-align: middle;
+/*    margin-top: -5px;*/
 }
