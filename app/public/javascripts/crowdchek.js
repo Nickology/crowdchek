@@ -40,8 +40,6 @@ function CCK_buildContextMenu(event) {
 			cck_context_menu.style.left = x + "px";
 			cck_context_menu.style.display = "block";
 			
-            
-			
 			return false;
 		}
 		console.log("NOT Buildling custom context menu");
@@ -49,13 +47,21 @@ function CCK_buildContextMenu(event) {
 	}
 }
 
+// close the context menu if the user clicks
+function CCK_closeContextMenu (event) {
+    var display = document.getElementById("cck").style.display;
+    if (display && display !== "none") {
+        document.getElementById("cck").style.display = "none";        
+    }    
+}
 
 console.log("Source ID = " + cck_source_id);
 
 window.oncontextmenu = CCK_buildContextMenu;
+window.onclick = CCK_closeContextMenu;
 
 var cck_context_menu = document.createElement("div");
 cck_context_menu.setAttribute("class", "cck_context");
 cck_context_menu.setAttribute("id", "cck");
-cck_context_menu.innerHTML = "<div class='menu_head'>Chek</div><div class='cck_context_option' onClick='openNav(more)'>This is inaccurate</div><div class='cck_context_option' onClick='openNav(thanks)'>Spelling error</div>";
+cck_context_menu.innerHTML = "<div id='popmenu'><div class='menu_head'>Chek</div><div class='cck_context_option' onClick='openNav(more)'>This is inaccurate</div><div class='cck_context_option' onClick='openNav(thanks)'>Spelling / grammar error</div></div>";
 document.getElementsByTagName("body")[0].appendChild(cck_context_menu);
