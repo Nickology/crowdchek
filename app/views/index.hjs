@@ -6,6 +6,7 @@
 		</style>
 		<link rel="stylesheet" href="stylesheets/crowdcheck.css">
 		<script type="text/javascript" src="javascripts/crowdchek.js" defer></script>
+		<script type="text/javascript" src="javascripts/animation.js" defer></script>
 		<meta property="og:url" content="http://www.example.com" />
 	</head>
 
@@ -26,6 +27,38 @@
 	<p>"The Article 50 process is now under way, and in accordance with the British people, the United Kingdom is leaving the European Union," May said.</p>
 
 
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content" id="overlay-divs">
+      <div id="login">
+          <a href="#" onClick="nextScreen()">Login.</a>
+      </div>
+      <div id="moreinfo">
+          <img src="images/logo.jpg">
+          <div id="overlay-instructions">
+              <p>Can you tell us more about the issue?</p>
+              <p><textarea id="textinput" rows="5" cols="50" placeholder="Please include a URL reference if possible."></textarea></p>
+          </div>
+          <!-- Rounded switch -->
+              <label class="switch">
+                <input type="checkbox" checked>
+                <div class="slider round"></div>
+              </label>
+          <div id="sliderlabel">It's ok to contact me</div>
+          <button onClick="nextScreen()">Submit</button>
+      </div>
+      <div id="thanksmessage">
+          <img src="images/logo.jpg">
+          <p>Report submitted. Thanks!</p>
+      </div>
+  </div>
+
+</div>
 
 	</body>
 </html>

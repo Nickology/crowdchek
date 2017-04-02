@@ -105,6 +105,9 @@ function cck_send(obj) {
 		if (this.readyState != 4 || this.status != 200) {
 			console.error("[CHEK] Unable to send feedback");
 			// TODO: Show error 
+			// openNav('error');
+		} else if (this.status == 200) {
+			openNav('thanks');
 		}
 	};
 	ajax.open("POST", cck_URL + '/chek', true);
